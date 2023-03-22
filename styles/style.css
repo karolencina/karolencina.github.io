@@ -1,0 +1,88 @@
+:root {
+
+    /* Colours */
+    --white: #F7F7FF;
+    --black: #1D1B26;
+    --grey-dark: #B6B6BB;
+    --grey-light: #E6E6EE;
+    --yellow: #F4E9E0;
+    --green: #D2E9EC;
+    --pink: #E5D8E5;
+    --blue: #c7c7ea;
+
+
+    /* Typography */
+    --font: "General Sans", sans-serif;
+
+    /* Margin and padding */
+    --padding-x: 20px;
+    --padding-y: 10px;
+    --margin-x: 20px;
+    --margin-y: 10;
+
+    /* Borders */
+    --border-primary: 1px solid var(--black);
+    --border-secondary: 1px solid var(--grey-light);
+}
+
+body {
+    background-color: var(--white);
+    margin: 0;
+    font-family: var(--font);
+}
+
+h1 {
+
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.navbar {
+    background-color: var(--white);
+    border-bottom: var(--border-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: var(--font);
+    color: var(--black);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #1D1B26;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #1D1B26;
+}
+
+#home {
+    background: radial-gradient(ellipse at bottom right, var(--green), var(--yellow) 20%, var(--pink) 70%, var(--blue));
+    height: 100vh; /* Set the height to the viewport height */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    text-align: center;
+}
+
+#home h2 {
+    max-width: 80%; /* Limit the width of the text to 80% of the parent container */
+    margin: 0 auto; /* Center the text horizontally */
+}
