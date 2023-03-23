@@ -80,9 +80,45 @@ h2 {
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
     text-align: center;
+    padding: 0 20px;;
 }
 
-#home h2 {
+#home .content h2 {
     max-width: 80%; /* Limit the width of the text to 80% of the parent container */
     margin: 0 auto; /* Center the text horizontally */
+    flex: 1;
+}
+
+#home img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    #home img {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
+
+#projects {
+    padding: 0 var(--padding-x);
+}
+
+.project-button {
+
+}
+
+.project-title {
+    font-weight: 500;
+}
+
+.project-subtitle {
+
 }
