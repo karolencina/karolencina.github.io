@@ -54,7 +54,7 @@ h2 {
     font-size: 24px;
     font-weight: normal;
     text-decoration: none;
-    color: #1D1B26;
+    color: var(--black);
 }
 
 .navbar-nav {
@@ -70,7 +70,7 @@ h2 {
 
 .nav-link {
     text-decoration: none;
-    color: #1D1B26;
+    color: var(--black);
 }
 
 .content {
@@ -111,6 +111,42 @@ h2 {
     margin-left: 50px;
 }
 
+#projects {
+    padding: 0 var(--padding-x);
+}
+
+.project-button {
+    background-color: transparent;
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    color: var(--black);
+    padding: 10px 20px;
+}
+
+.project-button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.project-button:hover svg path {
+    fill: var(--white); /* Change the color to the desired hover color */
+}
+
+.arrow-up {
+    width: 16px; /* change this value to adjust the width of the icon */
+    height: 16px; /* change this value to adjust the height of the icon */
+    vertical-align: middle;
+    margin-left: 5px; /* change this value to adjust the spacing between the icon and the button text */
+}
+
+.project-title {
+    font-weight: 500;
+}
+
+.project-subtitle {
+
+}
+
 @media screen and (max-width: 768px) {
     .content {
         flex-direction: column;
@@ -120,20 +156,4 @@ h2 {
         margin-top: 50px;
         margin-left: 0;
     }
-}
-
-#projects {
-    padding: 0 var(--padding-x);
-}
-
-.project-button {
-
-}
-
-.project-title {
-    font-weight: 500;
-}
-
-.project-subtitle {
-
 }
