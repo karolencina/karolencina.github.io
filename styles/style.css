@@ -73,6 +73,21 @@ h2 {
     color: #1D1B26;
 }
 
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-wrapper img {
+    width: 100%;
+    max-width: 400px;
+}
+
 #home {
     background: radial-gradient(ellipse at bottom right, var(--green), var(--yellow) 20%, var(--pink) 70%, var(--blue));
     height: 100vh; /* Set the height to the viewport height */
