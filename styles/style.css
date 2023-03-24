@@ -45,7 +45,6 @@ h2 {
 }
 
 .navbar-brand {
-    font-size: 24px;
     font-weight: normal;
     text-decoration: none;
     color: var(--black);
@@ -124,7 +123,6 @@ h2 {
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 20px;
     padding: 4rem;
-
 }
 
 .project-content{
@@ -175,6 +173,18 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
     .content {
         flex-direction: column;
     }
@@ -184,19 +194,29 @@ h2 {
         margin-left: 0;
     }
 
+    .section-title {
+        padding: 10px 20px;
+    }
+
     .project-img {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
         margin-bottom: 20px;
         max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .project {
         grid-template-rows: auto auto;
         grid-template-columns: 1fr;
         grid-row-gap: 40px;
         padding: 2rem;
-        justify-content: center; /* center content horizontally */
-        align-items: center; /* center content vertically */
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
     }
 
     .project-content {
