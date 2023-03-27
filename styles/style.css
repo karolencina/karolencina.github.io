@@ -33,6 +33,11 @@ h2 {
     font-size: 20px;
 }
 
+button {
+    font-weight: normal;
+    font-size: 1.17em;
+}
+
 .navbar {
     background-color: var(--white);
     border-bottom: var(--border-primary);
@@ -129,12 +134,16 @@ h2 {
     grid-column: 1 / 2;
 }
 
-.project-img img {
+.project-img {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: 3 / 3;
     grid-row: 1 / 2;
+}
+
+.project-img img {
+    display: flex;
     width: 100%;
     max-width: 300px;
 }
