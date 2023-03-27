@@ -47,6 +47,10 @@ button {
     padding: 20px 40px;
     font-family: var(--font);
     color: var(--black);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .navbar-brand {
