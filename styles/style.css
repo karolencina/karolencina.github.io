@@ -207,6 +207,16 @@ textarea {
     height: 6rem;
 }
 
+footer {
+    background-color: var(--white);
+    border-top: var(--border-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    color: var(--black);
+}
+
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 20px;
