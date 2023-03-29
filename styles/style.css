@@ -3,6 +3,7 @@
     /* Colours */
     --white: #F7F7FF;
     --black: #1D1B26;
+    --grey-text: #9d9da2;
     --grey-dark: #B6B6BB;
     --grey-light: #E6E6EE;
     --yellow: #F4E9E0;
@@ -34,7 +35,7 @@ h2 {
     font-size: 20px;
 }
 
-button {
+button, a.project-button {
     font-weight: normal;
     font-size: 1.17em;
     background-color: transparent;
@@ -42,9 +43,10 @@ button {
     border-radius: 50px;
     color: var(--black);
     padding: 10px 20px;
+    text-decoration: none;
 }
 
-button:hover {
+button:hover, a.project-button:hover {
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
@@ -184,7 +186,7 @@ button:hover {
 }
 
 .about-content {
-    padding: 20px 40px;;
+    padding: 20px 40px;
 }
 
 .contact-form {
@@ -226,6 +228,29 @@ footer {
     align-items: center;
     padding: 80px 40px;
     color: var(--black);
+}
+
+/********** Project Page Styling *********/
+
+.project-page-title {
+    font-weight: 600;
+}
+
+.project-description {
+    padding: 20px 40px;
+}
+
+figure {
+    margin: auto;
+    max-width: 650px;
+}
+
+.code-snippet {
+    max-width: 100%
+}
+
+figcaption {
+    color: var(--grey-text);
 }
 
 @media screen and (max-width: 768px) {
