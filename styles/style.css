@@ -253,6 +253,7 @@ figure {
 .img-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .microinteraction {
