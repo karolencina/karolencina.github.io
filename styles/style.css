@@ -187,6 +187,7 @@ button:hover, a.project-button:hover {
 
 .about-content {
     padding: 20px 40px;
+    border-bottom: var(--border-secondary);
 }
 
 .contact-form {
