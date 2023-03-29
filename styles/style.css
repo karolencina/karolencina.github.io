@@ -247,7 +247,12 @@ figure {
 }
 
 .code-snippet {
-    max-width: 100%
+    max-width: 100%;
+}
+
+.microinteraction {
+    border-radius: 20px;
+    max-height: 150px;
 }
 
 figcaption {
