@@ -250,9 +250,15 @@ figure {
     max-width: 100%;
 }
 
+.img-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .microinteraction {
     border-radius: 20px;
     max-height: 150px;
+    margin-right: 5px;
 }
 
 figcaption {
