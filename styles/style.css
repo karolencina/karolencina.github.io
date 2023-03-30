@@ -241,9 +241,20 @@ footer {
     padding: 20px 40px;
 }
 
+.text-link {
+    color: #8e8eda;
+    text-decoration: none;
+}
+
 figure {
     margin: auto;
     max-width: 650px;
+}
+
+.figure-img {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .code-snippet {
