@@ -1,6 +1,6 @@
 @font-face {
     font-family: "General Sans";
-    src: local('GeneralSans-Regular.otf'); }
+    src: local('../GeneralSans-Regular.otf'); }
 
 :root {
 
