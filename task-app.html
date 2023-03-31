@@ -33,14 +33,18 @@
             <img alt="Low fidelity sketch" class="sketch" src="assets/img/tasks-lofi-01.png">
             <img alt="Low fidelity sketch" class="sketch" src="assets/img/tasks-lofi-02.png">
         </div>
-        <figcaption>The low-fidelity wireframes show my initial ideas and plans of implementing a calendar, pomodoro timer, stats and settings. The final design was eventually simplified.</figcaption>
+        <figcaption>The low-fidelity wireframes show my initial ideas and plans of implementing a calendar, pomodoro timer, stats and settings. The final design was eventually simplified.</figcaption></figure>
     <p>
         The Figma prototype consists of 3 pages – mock-up, style guide and the prototype itself made up of click-through screen models. The prototype’s features and components served as the principal style guide during implementation.
         Apple’s <a class="text-link" href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/" target="_blank">Human Interface Guidelines</a> Large (Default) typography sizing were followed when designing the application’s text. The digital prototype proved itself to be an invaluable visual guide during the development phase.
     </p>
     <figure>
         <img class="shadow-img" src="assets/img/tasks-style-guide.png">
-        <figcaption>In order to implement a dynamic content changing, I needed to think about the logic behind it. I first created a tree to represent all of the possible choices and results which I used as a reference when writing my code.</figcaption>
+        <figcaption>The design system I created. Figma's component system is very similar to the components that React Native uses and therefore it helped me a lot when translating the design to code.</figcaption>
+    </figure>
+    <figure>
+        <iframe style="max-width: 100%; border: none" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRvhtdXn499KD8h5bdsXPps%2FTasks-App%3Fpage-id%3D0%253A1%26node-id%3D1-137%26viewport%3D397%252C383%252C0.12%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A3" allowfullscreen></iframe>
+        <figcaption>Above is an interactive high-fidelity prototype of my project. I created the application based on this prototype.</figcaption>
     </figure>
     <h2>Implementation</h2>
     <p>
@@ -53,7 +57,7 @@
         Some of the built-in (Core) Components which were used are View, Text, StyleSheet, TextInput and ScrollView from the Basic Components, FlatList from List Views, and other components like ActivityIndicator, Modal, KeyboardAvoidingView and TouchableOpacity.
     </p>
         <figure>
-            <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/813646238?h=55515fcdc2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_2594"></iframe>
+            <div style="padding:75% 0 0 0; position:relative; margin: 20px 0;"><iframe src="https://player.vimeo.com/video/813646238?h=55515fcdc2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%; z-index: -1" title="IMG_2594"></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
             <figcaption>The video shows an interaction with the final version of the developed app. The user can create new folders and to-do's and they are stored in a Firebase database.</figcaption>
@@ -68,7 +72,6 @@
     <p>
         To test the application, two people were asked to use it with a goal to create a shopping list. Both of the users found the application intuitive and easy to use. The first user claimed that she enjoyed the possibility to choose her own colour of the folder and the second user said that he liked how easily he could access the tasks and mark them as done.
     </p>
-    </figure>
 </section>
 <!-- End of main context -->
 <footer>
