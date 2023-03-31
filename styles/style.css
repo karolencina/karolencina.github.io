@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "General Sans";
-    src: local('../GeneralSans-Regular.otf'); }
+    font-family: "GeneralSans";
+    src: url('../GeneralSans-Regular.otf'); }
 
 :root {
 
@@ -17,7 +17,7 @@
 
 
     /* Typography */
-    --font: "General Sans", sans-serif;
+    --font: GeneralSans;
 
     /* Borders */
     --border-primary: 1px solid var(--black);
@@ -28,7 +28,7 @@
 body {
     background-color: var(--white);
     margin: 0;
-    font-family: var(--font);
+    font-family: var(--font)
 }
 
 h1, h2, h3, h4 {
