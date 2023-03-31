@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <title>Tasks | Karo Lencina</title>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html"><h1>Karo Lencina</h1></a>
+    <h1 class="project-page-title">Tasks</h1>
+</nav>
+<!-- Main context -->
+<section class="project-description">
+    <h2>Overview</h2>
+    <p>
+        Tasks is a mobile productivity application that offers a thematical organisation of tasks and to-do lists through a folder-like structure. It was designed in Figma, developed with React Native, and it uses Firebase as its database. It consists of a main screen displaying folders and two Modal components – the first one is accessed via a plus button on the main screen and gives users the possibility to add a new folder, and the second modal opens upon tapping on each of the folders on the main screen and displays folder-specific tasks.
+    </p>
+    <p>
+        The application has not been deployed, but its codebase can be found on<a class="text-link" href="https://japanese-drinks.netlify.app/" target="_blank"></a>.
+    </p>
+    <h2>Design</h2>
+    <p>
+        The first step of the application design process were ideation and low-fidelity paper prototyping featuring more ideas and functionalities than the finished application. The low-fidelity prototype laid the foundations for the high-fidelity digital prototype created in Figma.
+    </p>
+    <figure>
+        <div class="sketch-container">
+            <img alt="Low fidelity sketch" class="sketch" src="assets/img/tasks-lofi-03.png">
+            <img alt="Low fidelity sketch" class="sketch" src="assets/img/tasks-lofi-01.png">
+            <img alt="Low fidelity sketch" class="sketch" src="assets/img/tasks-lofi-02.png">
+        </div>
+        <figcaption>The low-fidelity wireframes show my initial ideas and plans of implementing a calendar, pomodoro timer, stats and settings. The final design was eventually simplified.</figcaption>
+    <p>
+        The Figma prototype consists of 3 pages – mock-up, style guide and the prototype itself made up of click-through screen models. The prototype’s features and components served as the principal style guide during implementation.
+        Apple’s <a class="text-link" href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/" target="_blank">Human Interface Guidelines</a> Large (Default) typography sizing were followed when designing the application’s text. The digital prototype proved itself to be an invaluable visual guide during the development phase.
+    </p>
+    <figure>
+        <img class="shadow-img" src="assets/img/tasks-style-guide.png">
+        <figcaption>In order to implement a dynamic content changing, I needed to think about the logic behind it. I first created a tree to represent all of the possible choices and results which I used as a reference when writing my code.</figcaption>
+    </figure>
+    <h2>Implementation</h2>
+    <p>
+        Tasks application was developed in Visual Studio Code with React Native and Expo, using Firebase as a real-time database, an iOS device for testing and Git for version control. Due to lack of experience with React Native framework before developing the application and, the code is inspired by articles and tutorials found online.
+    </p>
+    <p>
+        The application itself is composed of the main page and three custom components – a modal which lets a user add new folders, the folder itself and another modal which is toggled upon tapping on one of the folders. It lists all tasks within a specific folder, and it is the main functionality of the application.
+    </p>
+    <p>
+        Some of the built-in (Core) Components which were used are View, Text, StyleSheet, TextInput and ScrollView from the Basic Components, FlatList from List Views, and other components like ActivityIndicator, Modal, KeyboardAvoidingView and TouchableOpacity.
+    </p>
+        <figure>
+            <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/813646238?h=55515fcdc2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_2594"></iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <figcaption>The video shows an interaction with the final version of the developed app. The user can create new folders and to-do's and they are stored in a Firebase database.</figcaption>
+        </figure>
+    <h2>Evaluation</h2>
+    <p>
+        Compared to the original application concept, the implementation has less functionalities, specifically it lacks calendar, timer, settings and analytics. However, the main functionalities of the application – folders consisting of tasks, creating new empty folders, adding, deleting and marking tasks as complete and colour customisation – have been successfully developed and are fully functional.
+    </p>
+    <p>
+        The Tasks application could be improved by adding a "delete folder" option which have been initiated, and introducing more basic actions like notifications, Google Calendars synchronisation, filter, sorting and user authentication.
+    </p>
+    <p>
+        To test the application, two people were asked to use it with a goal to create a shopping list. Both of the users found the application intuitive and easy to use. The first user claimed that she enjoyed the possibility to choose her own colour of the folder and the second user said that he liked how easily he could access the tasks and mark them as done.
+    </p>
+    </figure>
+</section>
+<!-- End of main context -->
+<footer>
+    <p>Made with ❤️ by Karolina Lencina.</p>
+</footer>
+<script src="scripts/app.js"></script>
+</body>
+</html>

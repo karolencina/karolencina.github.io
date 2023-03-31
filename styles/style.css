@@ -257,6 +257,11 @@ figure {
     max-width: 100%;
 }
 
+.shadow-img {
+    border-radius: 20px;
+    max-width: 100%;
+}
+
 .code-snippet {
     max-width: 100%;
 }
@@ -265,12 +270,30 @@ figure {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    max-width: 100%;
+    overflow: clip;
 }
 
 .microinteraction {
     border-radius: 20px;
     max-height: 150px;
     margin-right: 5px;
+}
+
+.sketch-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.sketch {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+#text-sketch {
+
 }
 
 figcaption {
