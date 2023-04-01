@@ -298,8 +298,16 @@ figure {
     max-height: 500px;
 }
 
-#text-sketch {
 
+.fg-sketch-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.pitch-container {
+    margin: auto;
 }
 
 figcaption {
