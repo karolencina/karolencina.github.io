@@ -1,70 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/feelgraph.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
     <title>Feelgraph | Karo Lencina</title>
-</head>
-<body>
-<nav class="navbar">
-    <a class="navbar-brand" href="index.html"><h1>Karo Lencina</h1></a>
-    <h1 class="project-page-title">Feelgraph</h1>
-</nav>
-<!-- Main context -->
-<section class="project-description">
-    <h2>Overview</h2>
-    <p>
-        Feelgraph is a virtual diary application designed to help users improve or maintain psychological well-being through reflective writing. The app uses natural language processing technology to analyse users’ entries and generate personalised statistics about their emotions, behaviours and thought patterns, providing them with deeper insights about themselves.
-    </p>
-    <p>
-       Feelgraph is targeted mainly towards individuals looking for a convenient and innovative way to practice self-reflection and improve mental well-being, and better understand oneself. This group includes anyone who is looking for a convenient and effective way to track their emotions, behaviours, and thought patterns, including students, professionals, and people with common mental health conditions. It aims to provide a secure, supportive and non-judgmental space to express one’s thoughts and feelings.
-    </p>
-    <p>
-        With Feelgraph, users can intuitively create daily journal entries using only plain text and expressing themselves in sentences, as they would using a traditional diary. Through natural language processing, the app to identifies key emotions, themes, and patterns in the users' writing, and generates personalised insights and visualisations based on this data. For example, the app might highlight that the user tends to feel anxious on Mondays. However, the app does not provide any suggestion about what to do and how to act. It is only meant to act as an informative tool, creating data based on the user inputs.
-    </p>
-    <h2>Design</h2>
-    <p>
-        I started designing the application by brainstorming and drawing out different ideas on paper. I came up with a lot of interesting features, but I didn't end up using all of them in the final version. The rough sketches I made were really helpful in figuring out what I wanted for the app. I used those sketches to make a digital version of the app using Figma, a high fidelity prototype. The digital version was built on top of the original sketches, and it turned out much better than I was expecting.
-    </p>
-    <figure>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.html"><h1>Karo</h1></a>
+      <h1 class="project-page-title">Feelgraph</h1>
+    </nav>
+    <div class="page-background"></div>
+    <!-- Main context -->
+    <section class="project-description feelgraph-content">
+      <h2>Context</h2>
+      <p>
+        Mental wellbeing is declining worldwide, particularly among young
+        adults. Research shows that expressive writing (writing openly about our
+        thoughts and feelings) can improve both emotional health, but manually
+        analysing these entries is time-consuming, making it difficult for users
+        to spot patterns in their moods.</p>
+        <p><span class="problem-statement">Problem statement:</span> How can we create a
+        tool that encourages expressive writing while helping users understand
+        their mood patterns quickly and meaningfully?
+        </p>
+      </p>
+      <p class="main-info">
+        Feelgraph is a concept for a product that combines expressive writing with personal analytics, helping users reflect on their mood patterns through simple, clear data visualisation.
+      </p>
+      <div class="role">
+      <h2>My Role</h2>
+        <h4>UX Research and UI Design</h4>
+        <p>
+  Research, wireframes, design system, high-fidelity prototype (Figma)
+        </p>
+        <h4>Development</h4>
+        <p>
+         Implemented a working iOS prototype with core features using Swift
+        </p>
+      </div>
+      <h2>Design</h2>
+      <p>
+        I started designing the application by brainstorming and drawing out
+        different ideas on paper. I came up with a lot of interesting features,
+        but I didn't end up using all of them in the final version. The rough
+        sketches I made were really helpful in figuring out what I wanted for
+        the app. I used those sketches to make a digital version of the app
+        using Figma, a high fidelity prototype. The digital version was built on
+        top of the original sketches, and it turned out much better than I was
+        expecting.
+      </p>
+      <figure>
         <div class="fg-sketch-container">
-            <img alt="Low fidelity sketch" class="sketch" src="assets/img/fg-lofi-01.png">
-            <img alt="Low fidelity sketch" class="sketch" src="assets/img/fg-lofi-02.png">
-            <img alt="Low fidelity sketch" class="sketch" src="assets/img/fg-lofi-03.png">
-            <img alt="Low fidelity sketch" class="sketch" src="assets/img/fg-lofi-04.png">
-            <img alt="Low fidelity sketch" class="sketch" src="assets/img/fg-lofi-05.png">
+          <img
+            alt="Low fidelity sketch"
+            class="sketch"
+            src="assets/img/fg-lofi-01.png"
+          />
+          <img
+            alt="Low fidelity sketch"
+            class="sketch"
+            src="assets/img/fg-lofi-02.png"
+          />
+          <img
+            alt="Low fidelity sketch"
+            class="sketch"
+            src="assets/img/fg-lofi-03.png"
+          />
+          <img
+            alt="Low fidelity sketch"
+            class="sketch"
+            src="assets/img/fg-lofi-04.png"
+          />
+          <img
+            alt="Low fidelity sketch"
+            class="sketch"
+            src="assets/img/fg-lofi-05.png"
+          />
         </div>
-        <figcaption>The low-fidelity wireframes show my brainstorming and ideas.</figcaption></figure>
-    <figure>
-        <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlDomsP4TQ1BhmsuWMqUsuK%2FConnections%3Fpage-id%3D0%253A1%26node-id%3D159-1515%26viewport%3D2199%252C2681%252C0.67%26scaling%3Dscale-down%26starting-point-node-id%3D48%253A30%26hide-ui%3D1" allowfullscreen></iframe>
-        <figcaption>Above is an interactive high-fidelity prototype of my project. It features a design based on research articles about colours and addresses sensitive data privacy issues by using biometric verification for every login.</figcaption>
-    </figure>
-    <h2>Elevator Pitch</h2>
-    <p>
-        A short elevatior pitch for my peers was part of the project. I prepared an presentation that outlined all the essential feature and value of the product.
-    </p>
-    <figure>
-        <div class="pitch-container"><iframe style="border: none;" width="700" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlDomsP4TQ1BhmsuWMqUsuK%2FConnections%3Fpage-id%3D121%253A43%26node-id%3D121-486%26viewport%3D455%252C371%252C0.14%26scaling%3Dscale-down-width%26starting-point-node-id%3D121%253A44%26hide-ui%3D1" allowfullscreen></iframe></div>
-        <figcaption>To restart, press the <b>R</b> key. To proceed forward, click or press the right arrow key; to go back, use the left arrow key.</figcaption>
-    </figure>
-    <h2>Implementation</h2>
-    <p>
-        The project is presently under development. I have completed the literature review and research phases and am currently in the design stage. The development of the project has not yet commenced. Please check back in July for updates on the progress.
-    </p>
-    <div class="animation">
+        <figcaption>
+          The low-fidelity wireframes show my brainstorming and ideas.
+        </figcaption>
+      </figure>
+      <figure>
+        <iframe
+          style="border: none"
+          width="800"
+          height="450"
+          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlDomsP4TQ1BhmsuWMqUsuK%2FConnections%3Fpage-id%3D0%253A1%26node-id%3D159-1515%26viewport%3D2199%252C2681%252C0.67%26scaling%3Dscale-down%26starting-point-node-id%3D48%253A30%26hide-ui%3D1"
+          allowfullscreen
+        ></iframe>
+        <figcaption>
+          Above is an interactive high-fidelity prototype of my project. It
+          features a design based on research articles about colours and
+          addresses sensitive data privacy issues by using biometric
+          verification for every login.
+        </figcaption>
+      </figure>
+      <h2>Elevator Pitch</h2>
+      <p>
+        A short elevatior pitch for my peers was part of the project. I prepared
+        an presentation that outlined all the essential feature and value of the
+        product.
+      </p>
+      <figure>
+        <div class="pitch-container">
+          <iframe
+            style="border: none"
+            width="700"
+            height="450"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlDomsP4TQ1BhmsuWMqUsuK%2FConnections%3Fpage-id%3D121%253A43%26node-id%3D121-486%26viewport%3D455%252C371%252C0.14%26scaling%3Dscale-down-width%26starting-point-node-id%3D121%253A44%26hide-ui%3D1"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <figcaption>
+          To restart, press the <b>R</b> key. To proceed forward, click or press
+          the right arrow key; to go back, use the left arrow key.
+        </figcaption>
+      </figure>
+      <h2>Implementation</h2>
+      <p>
+        The project is presently under development. I have completed the
+        literature review and research phases and am currently in the design
+        stage. The development of the project has not yet commenced. Please
+        check back in July for updates on the progress.
+      </p>
+      <div class="animation">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://lottie.host/936fccf7-94f2-45f1-9884-4677203e6eea/0Xoh2byWzq.json" background="transparent" speed="1" style="width: 300px; height: 300px; margin: auto" loop autoplay></lottie-player>
-    </div>
-</section>
-<!-- End of main context -->
-<footer>
-    <p>Made with ❤️ by Karolina Lencina.</p>
-</footer>
-<script src="scripts/app.js"></script>
-</body>
+        <lottie-player
+          src="https://lottie.host/936fccf7-94f2-45f1-9884-4677203e6eea/0Xoh2byWzq.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px; margin: auto"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </section>
+
+    <!-- End of main context -->
+    <footer>
+      <p>Made with ❤️ by Karolina Lencina.</p>
+    </footer>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>

@@ -1,0 +1,96 @@
+body {
+  position: relative;
+  margin-left: 250px;
+  font-family: var(--font);
+  min-height: 100vh;
+}
+.page-background {
+  position: absolute; /* Change from absolute to fixed */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 250px;
+  min-height: 100vh; /* Use min-height instead of height */
+  height: 100%; /* Keep this for compatibility */
+  z-index: -1;
+  background: 
+    /* Blue blob in top right */ radial-gradient(
+      circle at 90% 15%,
+      #bbc2f1 0%,
+      #bbc2f180 15%,
+      transparent 30%
+    ),
+    /* Pink blob in right middle */
+      radial-gradient(
+        circle at 75% 40%,
+        #f3b6ae 0%,
+        #f3b6ae80 15%,
+        transparent 30%
+      ),
+    /* Yellow blob in bottom right */
+      radial-gradient(
+        circle at 85% 70%,
+        #ffdeb7 0%,
+        #ffdeb780 15%,
+        transparent 30%
+      ),
+    /* Peach blob in middle right */
+      radial-gradient(
+        circle at 60% 60%,
+        #ffd3c6 0%,
+        #ffd3c680 15%,
+        transparent 30%
+      ),
+    /* Light pink blob in middle */
+      radial-gradient(
+        circle at 70% 30%,
+        #ffcbdb 0%,
+        #ffcbdb80 15%,
+        transparent 30%
+      ),
+    /* Subtle gradient fading to white on the left */
+      linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 1) 100%
+      );
+  opacity: 0.7;
+}
+
+.problem-statement {
+  font-weight: 500;
+}
+
+.main-info {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -1px;
+}
+
+.feelgraph-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--black);
+  margin-top: 10px;
+  margin-bottom: -15px;
+}
+
+.role p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9d9da2; /* TODO: Use a variable for this color */
+}

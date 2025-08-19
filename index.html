@@ -1,138 +1,361 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/png" href="assets/favicon.png"/>
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Karo Lencina</title>
-</head>
-<body>
-<nav class="navbar">
-  <a class="navbar-brand" href="#home"><h1>Karo Lencina</h1></a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#projects">Projects</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#about">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#contact">Contact</a>
-    </li>
-  </ul>
-</nav>
-<!-- Home section -->
-<section id="home">
-  <div class="content">
-    <h2>
-      I am a web dev student with experience in web and mobile development and background in design.
-      <br>
-      <br>
-      I previously worked as a junior web developer at <a href="https://www.ed.ac.uk/">UoE</a>, UX/UI lead at <a href="https://woos.cz/">WOOs</a> and volunteered as an Art and Illustration Lead at <a href="https://cdcn.org/">CDCN</a>
-    </h2>
-  </div>
-</section>
-<!-- End of Home section -->
-<!-- Projects section -->
-<section id="projects">
-  <h1 class="section-title">Projects</h1>
-  <!-- Project 1 -->
-  <div class="project-wrapper">
-    <div class="project">
-      <div class="project-content"><h2 class="project-title">Japanese Drinks</h2>
-        <h3 class="project-subtitle">Web project re-development</h3>
-        <a href="japanese-drinks.html" class="project-button">View <svg class="arrow-up" viewBox="0 0 20 20">
-          <path d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="assets/favicon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="assets/favicon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Karo Lencina</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="#intro"><h1>KARO</h1></a>
+      <div class="navbar-items-wrapper">
+        <ul class="navbar-items">
+          <li class="nav-item">
+            <a class="nav-link" href="#intro">intro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#background">background</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects"> projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Intro section -->
+    <section id="intro">
+      <div class="content">
+        <h1>
+          Hi, I’m Karo — a
+          <span class="special-text">UI Engineer</span>. I believe in the
+          limitless potential of design to
+          <span class="special-text">simplify complex problems</span>. I work at
+          the intersection of design and code, creating intuitive, scalable and
+          future-proof interfaces, design systems, and tools that make life
+          easier for both users and developers.
+        </h1>
+      </div>
+    </section>
+    <section id="background">
+      <div class="experience-content">
+        <div class="experience-container">
+          <div class="company-badge">
+            <img
+              src="assets/ui-elements/arqiva-logo.svg"
+              alt="Arqiva Logo"
+              class="company-logo"
+              width="50"
+            />
+          </div>
+          <div class="experience-info">
+            <h2>Arqiva</h2>
+            <h1>UI Engineer</h1>
+            <p class="experience-duration">2023 - presence</p>
+          </div>
+          <div class="experience-details">
+            <p>
+              I led the initial redesign of a complex live media exchange
+              platform, improving usability and consistency across the product.
+              I also helped to build a custom React Component Library that is
+              now used across all digital products, enabling scalability and
+              design alignment. Alongside this, I mentored and onboarded
+              developers and designers at different levels, strengthening
+              collaboration within the team.
+            </p>
+          </div>
+        </div>
+        <div class="experience-container">
+          <div class="company-badge">
+            <img
+              src="assets/ui-elements/uoe-logo.png"
+              alt="The University of Edinburgh Logo"
+              class="company-logo"
+              width="50"
+            />
+          </div>
+          <div class="experience-info">
+            <h2>The University of Edinburgh</h2>
+            <h1>Web Developer</h1>
+            <p class="experience-duration">2021 - 2022</p>
+          </div>
+          <div class="experience-details">
+            <p>
+              I mentored interns and supported their transition into
+              professional workflows. I helped designers shift from Sketch to
+              Figma, making collaboration and handoff more efficient. I also
+              assisted with the development of a content migration strategy from
+              Drupal 7 to Drupal 9, which enabled a smoother transition of
+              university materials into the new system.
+            </p>
+          </div>
+        </div>
+        <div class="experience-container">
+          <div class="company-badge">
+            <img
+              src="assets/ui-elements/woos-logo.png"
+              alt="WOOs"
+              class="company-logo"
+              width="50"
+            />
+          </div>
+          <div class="experience-info">
+            <h2>WOOs</h2>
+            <h1>Product Designer (Contract)</h1>
+            <p class="experience-duration">2019 - 2020</p>
+          </div>
+          <div class="experience-details">
+            <p>
+              I modernised the company’s website to improve brand presence and
+              user engagement, and I designed the UI for an aircraft servicing
+              app, turning complex workflows into a more intuitive digital
+              experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Intro section -->
+    <!-- Projects section -->
+    <section id="projects">
+      <h1 class="section-title">Projects</h1>
+      <!-- Project 1 -->
+      <div class="project-wrapper">
+        <div class="project">
+          <div class="project-content">
+            <h2 class="project-title">Japanese Drinks</h2>
+            <div class="project-img">
+              <img
+                alt="Japanese Drinks Illustration"
+                src="assets/img/japanese-drinks.png"
+              />
+            </div>
+            <h3 class="project-subtitle">Web project re-development</h3>
+            <a href="japanese-drinks.html" class="project-button"
+              >View
+              <svg class="arrow-up" viewBox="0 0 20 20">
+                <path
+                  d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
 	l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
 	c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483
 	c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788
-	S1.293,9.212,1.729,9.212z" fill="black" transform="rotate(-45, 10, 10)"></path>
-        </svg>
-        </a>
+	S1.293,9.212,1.729,9.212z"
+                  fill="black"
+                  transform="rotate(-45, 10, 10)"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="project-img">
-        <img alt="Japanese Drinks Illustration" src="assets/img/japanese-drinks.png">
-      </div>
-    </div>
-  </div>
-  <!-- End of Project 1 -->
-  <!-- Project 2 -->
-  <div class="project-wrapper">
-    <div class="project">
-      <div class="project-content"><h2 class="project-title">Tasks</h2>
-        <h3 class="project-subtitle">Mobile app development</h3>
-        <a href="task-app.html" class="project-button">View <svg class="arrow-up" viewBox="0 0 20 20">
-          <path d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
+      <!-- End of Project 1 -->
+      <!-- Project 2 -->
+      <div class="project-wrapper">
+        <div class="project">
+          <div class="project-content">
+            <h2 class="project-title">Tasks</h2>
+          </div>
+          <div class="project-img">
+            <img alt="Mobile App Mockup" src="assets/img/task-app.png" />
+          </div>
+          <h3 class="project-subtitle">Mobile app development</h3>
+          <a href="task-app.html" class="project-button"
+            >View
+            <svg class="arrow-up" viewBox="0 0 20 20">
+              <path
+                d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
 	l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
 	c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483
 	c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788
-	S1.293,9.212,1.729,9.212z" fill="black" transform="rotate(-45, 10, 10)"></path>
-        </svg>
-        </a>
+	S1.293,9.212,1.729,9.212z"
+                fill="black"
+                transform="rotate(-45, 10, 10)"
+              ></path>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="project-img">
-        <img alt="Mobile App Mockup" src="assets/img/task-app.png">
-      </div>
-    </div>
-  </div>
-  <!-- End of Project 2 -->
-  <!-- Project 3 -->
-  <div class="project-wrapper">
-    <div class="project">
-      <div class="project-content"><h2 class="project-title">Feelgraph</h2>
-        <h3 class="project-subtitle">iOS mobile app design and development</h3>
-        <a href="feelgraph.html" class="project-button">View <svg class="arrow-up" viewBox="0 0 20 20">
-          <path d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
+      <!-- End of Project 2 -->
+      <!-- Project 3 -->
+      <div class="project-wrapper">
+        <div class="project">
+          <div class="project-content">
+            <h2 class="project-title">Feelgraph</h2>
+          </div>
+          <div class="project-img">
+            <img alt="mHealth App Mockup" src="assets/img/feelgraph.png" />
+          </div>
+          <h3 class="project-subtitle">
+            iOS mobile app design and development
+          </h3>
+          <a href="feelgraph.html" class="project-button"
+            >View
+            <svg class="arrow-up" viewBox="0 0 20 20">
+              <path
+                d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
 	l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
 	c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483
 	c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788
-	S1.293,9.212,1.729,9.212z" fill="black" transform="rotate(-45, 10, 10)"></path>
-        </svg>
+	S1.293,9.212,1.729,9.212z"
+                fill="black"
+                transform="rotate(-45, 10, 10)"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- End of Project 3 -->
+    </section>
+    <!-- End of Projects section -->
+    <!-- About section -->
+    <section id="about">
+      <div class="content">
+        <div class="toggle-container">
+          <button id="full-button" class="toggle-button active">
+            <span class="toggle-text line-through full"
+              >I want to know everything</span
+            >
+
+            <svg
+              class="underline-svg"
+              alt="underline"
+              width="178"
+              height="27"
+              viewBox="0 0 178 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.893799 1.46753C2.38547 1.61625 6.28366 1.91819 9.58247 2.0669C11.1024 2.13543 12.2864 2.51305 34.1658 2.66628C56.0452 2.8195 98.5782 2.8195 121.158 2.89386C143.739 2.96822 145.077 3.11693 145.99 3.2679C146.902 3.41887 147.348 3.56759 146.983 3.86728C146.618 4.16696 145.429 4.61312 133.067 5.14038C120.705 5.66765 97.2082 6.26252 84.0626 6.71768C70.9169 7.17285 68.8348 7.47028 65.9777 7.69786C59.5606 8.209 52.3047 8.97097 46.6738 10.172C44.1504 10.7102 42.0703 11.9723 39.8148 13.6984C39.0812 14.2597 39.6413 14.6808 40.3173 14.9084C41.8458 15.423 43.8459 15.7353 47.3565 16.4091C49.8099 16.8799 53.6928 17.2315 65.0538 17.5357C76.4149 17.8399 95.1532 17.9886 106.07 17.9909C116.988 17.9931 119.516 17.8444 120.595 17.8422C123.724 17.8356 110.115 20.3951 101.78 22.9391C95.9299 24.7247 115.343 22.8016 123.029 22.351C128.922 22.0054 138.894 22.1978 148.117 22.7926C157.339 23.3875 165.519 24.5772 170.253 25.1901C174.987 25.803 176.028 25.803 177.101 25.803"
+                stroke="black"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <button id="tldr-button" class="toggle-button">
+            <span class="toggle-text line-through tldr">TL;DR</span>
+            <svg
+              class="underline-svg"
+              alt="underline"
+              width="57"
+              height="11"
+              viewBox="0 0 57 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.19641 1.88377C1.41413 1.66605 3.37695 1.33616 14.1279 1.16957C23.0272 1.03167 38.922 1.54729 47.3819 1.76996C55.8418 1.99263 56.3861 2.10149 56.3399 2.32087C56.2937 2.54024 55.6406 2.86683 49.9154 4.23255C44.1903 5.59827 33.4129 7.99323 28.2964 9.11814C23.1799 10.243 24.0508 10.0253 26.078 9.74987C28.1051 9.47441 31.2621 9.14783 34.3581 8.97959C37.454 8.81135 40.3933 8.81135 43.4216 8.81135"
+                stroke="black"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <article class="about-content about-tldr hidden">
+          <h1 class="section-title">A mini story about me</h1>
+          <p>
+            My journey began with pixel art in Windows XP Paint at age 11, which
+            sparked my fascination with digital design. This early obsession
+            evolved into a career as a UI Engineer, where I blend design with
+            engineering to create intuitive interfaces. At Arqiva, I led the
+            design of a company-wide component library, and I'm constantly
+            looking for ways to simplify complex problems through thoughtful
+            design systems and collaboration.
+          </p>
+          <p class="hehe">(Btw I get it, we're all busy)</p>
+        </article>
+        <article class="about-content about-full">
+          <h1 class="section-title">A big story about me</h1>
+          <p>
+            I still remember when I became fascinated with web graphics. I was
+            11 years old, playing with Windows XP Paint on the only computer in
+            our household. I’d spend hours drawing pixel-perfect shapes,
+            carefully counting the exact number of pixels and their positions.
+            At the time, they were just tiny squares to me — but soon I
+            discovered bits and bytes, binary and hexadecimal numbers, digital
+            colour, and Imagine, a Slovak programming language. That’s when I
+            realised there was more than just arranging pixels — there was a
+            whole world of logic and design working together.
+          </p>
+          <p>
+            That early obsession with detail and structure naturally grew into a
+            career where I now work as a UI Engineer, blending design and
+            engineering. Along the way, I’ve explored everything from front-end
+            development to product design, but I’ve always gravitated back to
+            creating interfaces that feel intuitive and human. In fact, at my
+            current company I’ve become known as “the person who designs
+            things,” often being invited into design conversations beyond my
+            formal role.
+          </p>
+          <p>
+            Today, I thrive at the intersection of design and engineering —
+            turning complex problems into simple, scalable solutions. I
+            especially love working on design systems: at Arqiva, I led the
+            design of a company-wide component library that streamlined
+            workflows for both designers and developers, ensuring consistency at
+            scale. I also enjoy mentoring, collaboration, and exploring new
+            technologies, including AI, to keep pushing my craft forward.
+          </p>
+          <p>
+            Looking ahead, I’m driven to deepen my expertise as a design
+            engineer and take on greater responsibility. I want to grow into
+            more senior roles where I can shape products end-to-end, influence
+            design strategy, and empower teams through thoughtful systems and
+            collaboration. Ultimately, my goal is to keep learning, keep
+            challenging myself, and help create products that not only work
+            seamlessly but also genuinely improve people’s lives.
+          </p>
+        </article>
+      </div>
+    </section>
+    <!-- End of About section -->
+    <!-- Contact section -->
+    <section id="contact">
+      <div class="content-wrapper">
+        <h1 class="section-title">Contact</h1>
+        <span class="status-indicator">
+          <span class="status-text">Looking for new opportunities</span>
+        </span>
+      </div>
+
+      <div class="status-text">
+        Reach me on
+        <a class="text-link" href="mailto:karolencina@icloud.com">
+          karolencina@icloud.com
         </a>
+        or let's connect on
+        <a
+          class="text-link"
+          href="https://www.linkedin.com/in/karolencina/"
+          target="_blank"
+          >LinkedIn</a
+        >.
       </div>
-      <div class="project-img">
-        <img alt="mHealth App Mockup" src="assets/img/feelgraph.png">
-      </div>
-    </div>
-  </div>
-  <!-- End of Project 3 -->
-</section>
-<!-- End of Projects section -->
-<!-- About section -->
-<section id="about">
-  <h1 class="section-title">About</h1>
-  <article class="about-content">
-    <h2 class="section-subtitle">A story about how it all started...</h2>
-    <p>I still remember when I became fascinated with web graphics. It was when I was 11 years old and discovered Windows XP Paint on the only computer in our household. I spent hours drawing pixel-perfect shapes, carefully counting the exact number of pixels and their location on each object I drew. At that time, I viewed pixels as nothing more than squares which I kept arranging obsessively. However, my fascination started to make more sense when I was introduced to bits and bytes, binary and hexadecimal numbers, digital colour and Imagine (a Slovak object-oriented programming language used to introduce programming in secondary schools). I began to understand how powerful computers were and wanted to explore all the magic they could perform.
-    </p>
-    <p>As I continued to learn, I discovered web development and created my first few HTML Hello Worlds, experimenting with HTML, CSS, and sometimes JavaScript. The boundless possibilities excited me, and I spent an entire weekend creating my first personal website, lost in the work and losing track of time. However, I quickly realized that my knowledge had gaps when I encountered specific problems for which I couldn't find any answers. I knew I had to fill in those knowledge gaps in order to create fully functional websites, so I began to read books and solve programming problems I found online.</p>
-    <p>During my exchange program in Auckland, New Zealand, I discovered my passion for coding through technology classes. It was there that I was introduced to Python, my first programming language. I immediately started experimenting by creating small programs and playing around with different functionalities.
-    </p>
-    <p>During my first year of university studying Immersive Systems Design, I continued to explore my passion for coding and game development. Using Python and pygame, I created games and even delved into virtual reality. However, I realised that while I found it enjoyable, it was not my true passion, so I decided to change my course of study.</p>
-    <p>Throughout my subsequent university years, I had the opportunity to explore various technologies, including React, React Native, Python Flask, MariaDB, SQLite, and Arduino, among others. Additionally, during my year-long work placement at the University of Edinburgh, I had the opportunity to gain valuable experience working in a professional team environment as part of the web development team. As a web development and support assistant, I was involved in developing and implementing a Drupal content migration strategy, which not only boosted my confidence in back-end development, but also allowed me to gain hands-on experience with agile methodologies.</p>
-  </article>
-</section>
-<!-- End of About section -->
-<!-- Contact section -->
-<section id="contact">
-  <h1 class="section-title">Contact</h1>
-  <form class="contact-form" action="https://formspree.io/f/mqkoyzqb" method="POST" >
-    <label for="name">Name</label>
-    <input id="name" type="text" name="Name" placeholder="Enter your name" required>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="Email" placeholder="Enter your email" required>
-    <label for="message">Message</label>
-    <textarea id="message" name="Message" placeholder="Enter your message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
-<!-- End of Contact section -->
-<footer>
-  <p>Made with ❤️ by Karolina Lencina.</p>
-</footer>
-<script src="scripts/app.js"></script>
-</body>
+    </section>
+    <!-- End of Contact section -->
+    <footer>
+      <p>Made with ❤️ by Karo Lencina.</p>
+    </footer>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>

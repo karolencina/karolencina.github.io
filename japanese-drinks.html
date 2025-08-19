@@ -1,54 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <title>Japanese Drinks | Karo Lencina</title>
-</head>
-<body>
-<nav class="navbar">
-    <a class="navbar-brand" href="index.html"><h1>Karo Lencina</h1></a>
-    <h1 class="project-page-title">Japanese Drinks</h1>
-</nav>
-<!-- Main context -->
-<section class="project-description">
-    <h2>Overview</h2>
-    <p>This project aimed to redesign and redevelop a web application that provided users with information on Japanese drinks. The project was initiated after receiving feedback from friends and peers who found the options on the existing site to be unclear and were unsure which button was which.</p>
-    <p>The website was deployed using Netlify and can be found <a class="text-link" href="https://japanese-drinks.netlify.app/" target="_blank">here</a>.</p>
-    <h2>Planning</h2>
-    <p>The first step of the project was planning, which involved creating a Figma design and prototype, preparing assets, and establishing a design system. Suitable SVG icons were also sourced from Ionicons to improve the visual design.</p>
-    <figure>
-        <img class="figure-img" src="assets/img/option-tree.png">
-        <figcaption>In order to implement a dynamic content changing, I needed to think about the logic behind it. I first created a tree to represent all of the possible choices and results which I used as a reference when writing my code.</figcaption>
-    </figure>
-    <h2>UI Redesign</h2>
-    <p>The redesign of the user interface focused on creating a more modern and sleek design. The website was changed to a black theme, combined with white to make the main elements stand out. Options and end results were presented in a card-like display, replacing bold text with a normal weight, as it is commonly used in most design guidelines. To add an element of gamification to the design, the cards tilt and move up on hover. Micro-interactions were also improved, particularly the hover effect, which now has animated icons but is minimalist to maintain a simple yet nice appearance.</p>
-    <figure>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.html"><h1>KARO</h1></a>
+      <h1 class="project-page-title">Japanese Drinks</h1>
+    </nav>
+    <!-- Main context -->
+    <section class="project-description">
+      <h2>Overview</h2>
+      <p>
+        This project aimed to redesign and redevelop a web application that
+        provided users with information on Japanese drinks. The project was
+        initiated after receiving feedback from friends and peers who found the
+        options on the existing site to be unclear and were unsure which button
+        was which.
+      </p>
+      <p>
+        The website was deployed using Netlify and can be found
+        <a
+          class="text-link"
+          href="https://japanese-drinks.netlify.app/"
+          target="_blank"
+          >here</a
+        >.
+      </p>
+      <h2>Planning</h2>
+      <p>
+        The first step of the project was planning, which involved creating a
+        Figma design and prototype, preparing assets, and establishing a design
+        system. Suitable SVG icons were also sourced from Ionicons to improve
+        the visual design.
+      </p>
+      <figure>
+        <img class="figure-img" src="assets/img/option-tree.png" />
+        <figcaption>
+          In order to implement a dynamic content changing, I needed to think
+          about the logic behind it. I first created a tree to represent all of
+          the possible choices and results which I used as a reference when
+          writing my code.
+        </figcaption>
+      </figure>
+      <h2>UI Redesign</h2>
+      <p>
+        The redesign of the user interface focused on creating a more modern and
+        sleek design. The website was changed to a black theme, combined with
+        white to make the main elements stand out. Options and end results were
+        presented in a card-like display, replacing bold text with a normal
+        weight, as it is commonly used in most design guidelines. To add an
+        element of gamification to the design, the cards tilt and move up on
+        hover. Micro-interactions were also improved, particularly the hover
+        effect, which now has animated icons but is minimalist to maintain a
+        simple yet nice appearance.
+      </p>
+      <figure>
         <div class="img-container">
-            <img alt="Microinteraction design" class="microinteraction" src="assets/img/info-microinteraction.gif">
-            <img alt="Microinteraction design" class="microinteraction" src="assets/img/start-microinteraction.gif" style="outline: 1px solid black;
-outline-offset: -1px;">
-            <img alt="Microinteraction design" class="microinteraction" src="assets/img/close-microinteraction.gif" style="outline: 1px solid black;
-outline-offset: -1px;">
+          <img
+            alt="Microinteraction design"
+            class="microinteraction"
+            src="assets/img/info-microinteraction.gif"
+          />
+          <img
+            alt="Microinteraction design"
+            class="microinteraction"
+            src="assets/img/start-microinteraction.gif"
+            style="outline: 1px solid black; outline-offset: -1px"
+          />
+          <img
+            alt="Microinteraction design"
+            class="microinteraction"
+            src="assets/img/close-microinteraction.gif"
+            style="outline: 1px solid black; outline-offset: -1px"
+          />
         </div>
-        <figcaption>My intention was to create unusual microinteractions on hover. As my project is meant to be a "Choose your own adventure" type of game, I wanted the design to be creative and playful. Each icon has a different microinteraction effect on hover, for example when hovering over the “info” icon, it tilts to the right which could resemble a curious gesture as a person tilting their head to a side when they don’t understand something and want to know more..</figcaption>
-    </figure>
-    <h2>Redevelopment</h2>
-    <p>Redevelopment of the website involved fixing bad HTML practices such as using the class and ID for the body element, better naming conventions, and better organization of code. CSS color variables were added for reusability, and ionicons were used as an open source alternative to manually created icons. Alt text was added for accessibility purposes, and HTML was used more semantically.</p>
-    <figure>
-        <img class="code-snippet" src="assets/img/code_01.png">
-        <figcaption>JavaScript code dynamically calculating the position of the Japanese Drinks result card based on its width and height, which may be variable depending on the content inside it. This allows for the card to always be centered vertically and horizontally regardless of its size, or the size of the window.</figcaption>
-    </figure>
-    <p>To improve the website's functionality, more dynamic elements were introduced, such as calculating half the width and height of an element in JavaScript rather than using only CSS. This approach allows for more customization and precision. An issue was also fixed where the website unnecessarily scrolled, despite the height being set to 100% of the viewport height.</p>
-</section>
-<!-- End of main context -->
-<footer>
-    <p>Made with ❤️ by Karolina Lencina.</p>
-</footer>
-<script src="scripts/app.js"></script>
-</body>
+        <figcaption>
+          My intention was to create unusual microinteractions on hover. As my
+          project is meant to be a "Choose your own adventure" type of game, I
+          wanted the design to be creative and playful. Each icon has a
+          different microinteraction effect on hover, for example when hovering
+          over the “info” icon, it tilts to the right which could resemble a
+          curious gesture as a person tilting their head to a side when they
+          don’t understand something and want to know more..
+        </figcaption>
+      </figure>
+      <h2>Redevelopment</h2>
+      <p>
+        Redevelopment of the website involved fixing bad HTML practices such as
+        using the class and ID for the body element, better naming conventions,
+        and better organization of code. CSS color variables were added for
+        reusability, and ionicons were used as an open source alternative to
+        manually created icons. Alt text was added for accessibility purposes,
+        and HTML was used more semantically.
+      </p>
+      <figure>
+        <img class="code-snippet" src="assets/img/code_01.png" />
+        <figcaption>
+          JavaScript code dynamically calculating the position of the Japanese
+          Drinks result card based on its width and height, which may be
+          variable depending on the content inside it. This allows for the card
+          to always be centered vertically and horizontally regardless of its
+          size, or the size of the window.
+        </figcaption>
+      </figure>
+      <p>
+        To improve the website's functionality, more dynamic elements were
+        introduced, such as calculating half the width and height of an element
+        in JavaScript rather than using only CSS. This approach allows for more
+        customization and precision. An issue was also fixed where the website
+        unnecessarily scrolled, despite the height being set to 100% of the
+        viewport height.
+      </p>
+    </section>
+    <!-- End of main context -->
+    <footer>
+      <p>Made with ❤️ by Karolina Lencina.</p>
+    </footer>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>
