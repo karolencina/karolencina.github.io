@@ -1,3 +1,4 @@
+@import url("variables.css");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap");
 
@@ -92,7 +93,7 @@ a.project-button:hover {
 }
 
 .navbar-brand {
-  font-weight: normal;
+  font-weight: 500px;
   text-decoration: none;
   color: var(--black);
   display: flex;
@@ -102,16 +103,6 @@ a.project-button:hover {
 }
 
 .navbar-brand:hover {
-  filter: blur(2px);
-}
-
-.navbar-brand h1 {
-  font-size: 32px;
-  margin: 0;
-  transition: filter 0.3s ease;
-}
-
-.navbar-brand h1:hover {
   filter: blur(2px);
 }
 
@@ -274,7 +265,7 @@ a.project-button:hover {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  text-align: right;
+  text-align: left;
 }
 
 @media screen and (max-width: 1201px) {
@@ -342,7 +333,7 @@ a.project-button:hover {
 #contact {
   display: flex;
   flex-direction: column;
-  gap: 25rem;
+  gap: 5rem;
   padding: 15rem 2rem;
   max-width: 800px;
   margin: 0 auto; /* center the section */
@@ -606,15 +597,12 @@ figcaption {
   #contact {
     gap: 4rem;
   }
+}
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-    padding: 9rem 3rem;
-    gap: 1rem;
-  }
+.profile {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
 }
 
 .special-text {

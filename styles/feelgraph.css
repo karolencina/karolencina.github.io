@@ -1,3 +1,12 @@
+@import url("variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap");
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../GeneralSans-Regular.otf");
+}
+
 body {
   position: relative;
   margin-left: 250px;
@@ -97,10 +106,19 @@ h4 {
   margin-bottom: -10px;
 }
 
+h5 {
+  font-size: 16px;
+  color: var(--black);
+  font-weight: 600;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
+  margin-bottom: -10px;
+}
+
 .role p {
   font-size: 16px;
   font-weight: 400;
-  color: #9d9da2; /* TODO: Use a variable for this color */
+  color: var(--grey-text);
 }
 
 section,
@@ -110,4 +128,102 @@ section,
 
 .project-description section > p {
   margin-bottom: 2rem;
+}
+
+.role-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.role-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 36px;
+  box-shadow: 0 0 60px rgba(156, 161, 255, 0.3); /* soft, diffused shadow */
+  backdrop-filter: blur(50px);
+  padding: 2rem;
+  flex: 1 1 1 250px;
+  max-width: 150px;
+}
+
+.role-card h4 {
+  font-size: 20px;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.role-card svg {
+  height: 0.85em;
+  width: auto;
+  vertical-align: baseline;
+  margin-right: 8px;
+}
+
+.role-card p {
+  font-size: 16px;
+  color: var(--grey-text);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#lowfi-sketches {
+  margin-bottom: 4rem;
+}
+
+.sketch-card {
+  background: white; /* 40% opacity of #9CA1FF */
+  border-radius: 36px;
+  box-shadow: 0 0 60px rgba(156, 161, 255, 0.3); /* soft, diffused shadow */
+  backdrop-filter: blur(50px);
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.sketch-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.sketch-card figcaption {
+  font-size: 16px;
+  color: var(--grey-text);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.poster-card {
+  max-width: 1000px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.poster-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(156, 161, 255, 0.3);
+  background: transparent;
+
+  backdrop-filter: blur(50px);
+}
+
+.poster-card figcaption,
+.poster-card .image-caption {
+  font-size: 16px;
+  color: var(--grey-text);
+  margin-top: 1rem;
+  text-align: center;
 }
