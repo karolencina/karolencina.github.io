@@ -1,3 +1,4 @@
+@import url("variables.css");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap");
 
@@ -10,7 +11,7 @@
   /* Colours */
   --white: #ffffff;
   --black: #000000;
-  --grey-text: #9d9da2;
+  --grey-text: #92929e;
   --grey-dark: #b6b6bb;
   --grey-light: #e6e6ee;
   --yellow: #f4e9e0;
@@ -58,19 +59,18 @@ button {
 }
 
 a.project-button {
-  font-weight: normal;
   font-size: 1.17em;
-  background-color: transparent;
-  border: 1px solid var(--black);
+  background-color: var(--black);
+  display: inline-flex;
   border-radius: 50px;
-  color: var(--black);
+  color: var(--white);
   padding: 10px 20px;
   text-decoration: none;
 }
 
 a.project-button:hover {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--grey-light);
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -93,19 +93,16 @@ a.project-button:hover {
 }
 
 .navbar-brand {
-  font-weight: normal;
+  font-weight: 500px;
   text-decoration: none;
   color: var(--black);
   display: flex;
-}
-
-.navbar-brand h1 {
-  font-size: 32px;
+  font-size: 24px;
   margin: 0;
-  transition: filter 0.3s ease;
+  transition: filter 0.2s ease;
 }
 
-.navbar-brand h1:hover {
+.navbar-brand:hover {
   filter: blur(2px);
 }
 
@@ -115,6 +112,7 @@ a.project-button:hover {
   justify-content: center;
   height: 100%; /* Take full height */
   width: 100%;
+  gap: 20px;
 }
 
 .navbar-items {
@@ -225,8 +223,8 @@ a.project-button:hover {
 /******************* Projects section ******************/
 
 #projects {
-  padding: 10rem 0;
-  max-width: 800px;
+  padding: 10rem 4rem;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -235,19 +233,48 @@ a.project-button:hover {
   gap: 12rem;
 }
 
-.project {
+.project-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 10rem;
   align-items: center;
-  justify-content: center;
 }
 
-.project-content {
+.right {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1201px) {
+  .project-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.project-content-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
-  text-align: center;
+  text-align: right;
+}
+
+.project-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  text-align: left;
+}
+
+@media screen and (max-width: 1201px) {
+  .project-content-left,
+  .project-content-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+  }
 }
 
 .project-img {
@@ -258,11 +285,8 @@ a.project-button:hover {
 
 .project-img img {
   display: flex;
-  max-width: 300px;
-}
-
-.project-button:hover svg path {
-  fill: var(--white);
+  max-width: 100%;
+  border-radius: 20px;
 }
 
 .arrow-up {
@@ -276,6 +300,20 @@ a.project-button:hover {
   font-weight: 500;
   font-size: 32px;
   letter-spacing: -1px;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .project-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-content-left,
+  .project-content-right {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .project-subtitle {
@@ -295,7 +333,7 @@ a.project-button:hover {
 #contact {
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 5rem;
   padding: 15rem 2rem;
   max-width: 800px;
   margin: 0 auto; /* center the section */
@@ -321,7 +359,6 @@ a.project-button:hover {
 
 .toggle-button {
   position: relative;
-
   font-size: 16px;
   border: none;
   background: transparent;
@@ -376,41 +413,6 @@ a.project-button:hover {
   stroke-dashoffset: 1000;
 }
 
-/* .toggle-button .line-through::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  left: 0;
-  top: calc(50% - 1px / 2);
-  background-color: currentColor;
-  transition: width 300ms ease-in-out;
-  pointer-events: none;
-}
-
-.toggle-button:not(.active) {
-  color: var(--grey-text);
-}
-
-
-.toggle-button:not(.active) .line-through::after {
-  width: 100%;
-}
-
-.toggle-button:not(.active):hover {
-  color: var(--black);
-}
-
-.toggle-button:not(.active):hover .line-through::after {
-  width: 0%;
-}
-
-
-.toggle-container:has(.toggle-button:not(.active):hover) .toggle-button.active {
-  color: var(--grey-text);
-} */
-
-/* Hide the full version by default */
 .hidden {
   display: none;
 }
@@ -433,7 +435,15 @@ footer {
   font-weight: 400;
   font-size: 32px;
   color: var(--grey-text);
-  padding-top: 3rem;
+  letter-spacing: -1px;
+}
+
+.nav-project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Take full height */
+  width: 100%;
 }
 
 .project-description {
@@ -508,13 +518,29 @@ figcaption {
   color: var(--grey-text);
 }
 
+@media screen and (max-width: 1200px) {
+  #contact,
+  #about,
+  #projects,
+  #background,
+  #intro {
+    padding: 5rem 5rem;
+    margin: 0;
+  }
+
+  #projects,
+  #contact {
+    gap: 8rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .navbar {
@@ -552,18 +578,31 @@ figcaption {
   }
 
   .project-content {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-  }
-
-  .contact-form {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    margin: auto;
-    padding: 9rem 3rem;
-    gap: 1rem;
+    justify-content: center;
+    text-align: left;
   }
+
+  #contact,
+  #about,
+  #projects,
+  #background,
+  #intro {
+    padding: 2rem 2rem;
+    margin: 0;
+  }
+
+  #projects,
+  #contact {
+    gap: 4rem;
+  }
+}
+
+.profile {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
 }
 
 .special-text {

@@ -1,0 +1,21 @@
+:root {
+  /* Colours */
+  --white: #ffffff;
+  --black: #000000;
+  --grey-text: #92929e;
+  --grey-dark: #b6b6bb;
+  --grey-light: #e6e6ee;
+  --yellow: #f4e9e0;
+  --green: #d2e9ec;
+  --pink: #e5d8e5;
+  --blue: #c7c7ea;
+
+  /* Typography */
+  --font: "Geist Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Borders */
+  --border-primary: 1px solid var(--black);
+  --border-secondary: 1px solid var(--grey-light);
+  --border-input: 1px solid var(--grey-dark);
+}
