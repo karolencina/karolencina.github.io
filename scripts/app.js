@@ -98,3 +98,13 @@ fullButton.addEventListener("click", () => {
   fullContent.classList.remove("hidden");
   setActiveButton(fullButton);
 });
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.remove("open");
+}
