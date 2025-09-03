@@ -304,6 +304,99 @@ a.project-button:hover {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    margin-left: 0; /* Remove left margin on mobile */
+  }
+
+  body.menu-open {
+    overflow: hidden; /* Prevent background scrolling when menu is open */
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(20px); /* Add blur effect */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    height: 60px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-navbar-brand {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--black);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+    backdrop-filter: blur(20px); /* Add blur effect */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    z-index: 150;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .mobile-menu.open {
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make visible */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth fade */
+  }
+
+  /* Use body class instead */
+  body.menu-open .mobile-navbar {
+    opacity: 0.3; /* Reduce navbar opacity when menu is open */
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-menu .nav-link {
+    display: block;
+    padding: 1rem 0;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  #intro,
+  .content,
+  .feelgraph-content {
+    margin-top: 60px;
+  }
+
   .project-wrapper {
     flex-direction: column;
     align-items: center;
@@ -313,6 +406,13 @@ a.project-button:hover {
   .project-content-right {
     align-items: center;
     text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-navbar,
+  .mobile-menu {
+    display: none;
   }
 }
 
@@ -596,6 +696,11 @@ figcaption {
   #projects,
   #contact {
     gap: 4rem;
+  }
+
+  footer {
+    padding: 40px;
+    margin: 0px;
   }
 }
 

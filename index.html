@@ -13,6 +13,19 @@
 </head>
 
 <body>
+  <nav class="mobile-navbar">
+    <a href="index.html" class="mobile-navbar-brand">KARO</a>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">=</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#intro" class="nav-link" onclick="closeMobileMenu()">intro</a>
+    <a href="#background" class="nav-link" onclick="closeMobileMenu()">background</a>
+    <a href="#projects" class="nav-link" onclick="closeMobileMenu()">projects</a>
+    <a href="#about" class="nav-link" onclick="closeMobileMenu()">about</a>
+    <a href="#contact" class="nav-link" onclick="closeMobileMenu()">contact</a>
+  </div>
+
   <nav class="navbar">
     <a class="navbar-brand" href="#intro">KARO</a>
     <div class="navbar-items-wrapper">
