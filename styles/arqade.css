@@ -1,0 +1,178 @@
+@import url("variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap");
+
+body {
+  position: relative;
+  margin-left: 250px;
+  font-family: var(--font);
+  min-height: 100vh;
+  color: var(--black);
+  background-color: #fdfdfd;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin-left: 0;
+  }
+}
+
+section,
+.project-description section > h1 {
+  margin-bottom: 4rem;
+}
+
+/* Background */
+.page-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh;
+  height: 100%;
+  z-index: -1;
+  background: #fff;
+  opacity: 0.6;
+}
+
+/* Page layout */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.project-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.title-container {
+  margin-bottom: 4rem;
+}
+
+.project-hero {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 2rem 0;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+h2 {
+  font-size: 32px;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 20px;
+  color: var(--black);
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Role cards */
+.role-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.role-card {
+  background: #eef4f5;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 280px;
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.role-card h4 {
+  font-size: 18px;
+  margin-bottom: 0.8rem;
+}
+
+.role-card p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #0000007d;
+}
+
+/* Poster */
+.workflow-card {
+  max-width: 1000px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.workflow-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(156, 161, 255, 0.25);
+}
+
+.sketch-card {
+  background: white; /* 40% opacity of #9CA1FF */
+  border-radius: 36px;
+  box-shadow: 0 0 60px rgba(207, 233, 255, 0.3); /* soft, diffused shadow */
+  backdrop-filter: blur(50px);
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.sketch-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.sketch-card figcaption {
+  font-size: 16px;
+  color: var(--grey-text);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .project-content {
+    padding: 2rem 1rem;
+    margin-top: 60px;
+  }
+
+  .role-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .role-card {
+    max-width: none;
+    width: 100%;
+  }
+}
