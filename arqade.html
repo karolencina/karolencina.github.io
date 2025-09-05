@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/arqade.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <title>Cloud Media Platform | Karo Lencina</title>
+</head>
+
+<body>
+  <nav class="mobile-navbar">
+    <a href="index.html" class="mobile-navbar-brand">KARO</a>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">=</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link" onclick="closeMobileMenu()">
+      back to home
+    </a>
+    <a href="index.html" class="nav-link" onclick="closeMobileMenu()">back to home</a>
+    <a href="#overview" class="nav-link" onclick="closeMobileMenu()">overview</a>
+    <a href="#my-role" class="nav-link" onclick="closeMobileMenu()">my role</a>
+    <a href="#ux-ui" class="nav-link" onclick="closeMobileMenu()">ux/ui</a>
+    <a href="#process" class="nav-link" onclick="closeMobileMenu()">process</a>
+    <a href="#core-workflows" class="nav-link" onclick="closeMobileMenu()">core workflows</a>
+    <a href="#impact" class="nav-link" onclick="closeMobileMenu()">impact</a>
+  </div>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">KARO</a>
+    <h1 class="project-page-title">Cloud Media Platform</h1>
+    <div class="navbar-items-wrapper">
+      <ul class="navbar-items">
+        <li class="nav-item"><a class="nav-link" href="#overview">overview</a></li>
+        <li class="nav-item"><a class="nav-link" href="#my-role">my role</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ux-ui">ux/ui</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#core-workflows">core workflows</a></li>
+        <li class="nav-item"><a class="nav-link" href="#impact">impact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-background"></div>
+  <section class="project-content">
+    <div class="title-container">
+      <h1>Cloud-Native Media Delivery Platform</h1>
+      <h4>Scalable live and scheduled media workflows for enterprise organisations</h4>
+    </div>
+    <!-- <img class="hero" src="assets/img/cloud/hero.png" alt="Cloud Media Platform Hero Image" /> -->
+
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>
+        A cloud-native platform for live and scheduled media delivery across organisations. Integrated with AWS to
+        provision media pipelines on-demand, with streamlined management for entitlements, billing, and stream quality.
+      </p>
+    </section>
+
+    <section id="my-role">
+      <h2>My Role</h2>
+      <div class="role-cards">
+        <div class="role-card">
+          <h4>Lead UI/UX Designer</h4>
+          <p>Led the redesign of the platform UI to improve usability and scalability. Defined user flows for
+            configuring
+            sources, scheduling streams, and managing access. Collaborated with backend teams to align UI with system
+            logic and infrastructure provisioning.</p>
+        </div>
+        <div class="role-card">
+          <h4>Frontend Engineer</h4>
+          <p>Contributed to frontend implementation with a component-based architecture. Built a Storybook design system
+            that evolved into a React Component Library, now adopted across multiple products in the organisation.</p>
+        </div>
+        <div class="role-card">
+          <h4>Strategic Impact</h4>
+          <p>Transformed a technically complex platform into a user-friendly tool, enabled scalable media workflows, and
+            improved collaboration between design, engineering, and product teams.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="ux-ui">
+      <h2>UX/UI Contributions</h2>
+      <figure>
+        <div class="sketch-card">
+          <div class="sketch-grid">
+            <img alt="Low fidelity sketch 1" src="assets/img/media-interchange/mi-lofi-01.webp" />
+            <img alt="Low fidelity sketch 2" src="assets/img/media-interchange/mi-lofi-02.webp" />
+            <img alt="Low fidelity sketch 3" src="assets/img/media-interchange/mi-lofi-03.webp" />
+            <img alt="Low fidelity sketch 4" src="assets/img/media-interchange/mi-lofi-04.webp" />
+          </div>
+          <figcaption>
+            Early low-fidelity sketches exploring layout and information architecture for configuring media workflows.
+          </figcaption>
+        </div>
+      </figure>
+      <ol>
+        <li>
+          <strong>Streamlined Source Configuration</strong>
+          <p>I designed interfaces for creating, editing, viewing, and listing ingest points, supporting multiple
+            protocols
+            (RTP, SRT, Zixi). Advanced settings were simplified into intuitive forms with contextual help, reducing
+            errors
+            and setup time for technical users.</p>
+        </li>
+        <li>
+          <strong>Efficient Contribution Management</strong>
+          <p>Built flows for defining stream types, scheduling, redundancy, and profile locking. Both event-based and
+            channel-based contributions were supported, helping operators manage multiple streams without conflicts
+            and
+            improving operational efficiency.</p>
+        </li>
+        <li>
+          <strong>Flexible Destination Setup</strong>
+          <p>Created configuration interfaces for output endpoints with redundancy and failover logic. Users could
+            easily
+            handle pre-created and dynamic destinations, reducing misconfigurations and improving reliability.</p>
+        </li>
+        <li>
+          <strong>Delivery Configuration with Clear Feedback</strong>
+          <p>Designed the delivery setup to manage routing, transcoding, and cross-region delivery. Visual indicators
+            highlighted redundancy, billing, and stream health, allowing operators to quickly detect and resolve
+            issues.</p>
+        </li>
+        <li>
+          <strong>Modular Stream Profile Design</strong>
+          <p>Developed interfaces for defining stream parameters (resolution, codec, bitrate, framerate, GOP,
+            colorspace).
+            Profiles were reusable across workflows, which saved time and ensured consistency across the platform.</p>
+        </li>
+        <li>
+          <strong>Scalable Navigation & Menu System</strong>
+          <p>Designed a navigation system to support complex operational workflows across multiple services. Patterns
+            were
+            built for scalability and modularity, ensuring that as new features were added, users could maintain
+            efficiency
+            and clarity.</p>
+        </li>
+      </ol>
+    </section>
+
+
+    <section id="process">
+      <h2>Design Process</h2>
+      <div class="workflow-card">
+        <img class-"workflow-board" src="assets/img/media-interchange/workflow-board.webp"
+          alt="Workflow board showing user flow for creating a media source" />
+      </div>
+      <h4>Auditing the Legacy Experience</h4>
+      <p>The project began with a UX audit of the existing interfaces. I evaluated them against Jakob Nielsen’s
+        heuristic
+        principles to identify usability issues, inconsistencies, and accessibility gaps. This helped me frame the
+        conversation
+        with stakeholders not just around aesthetics, but also around usability and compliance including pushing for
+        alignment
+        with WCAG 3.0 guidelines where possible.</p>
+      <h4>Collaborative Flow Mapping</h4>
+      <p>To align design with how the system actually worked, the scrum team ran a workshop with key
+        stakeholders.
+        Together, we
+        walked through critical user flows for core operational tasks. This uncovered hidden dependencies in backend
+        logic,
+        which influenced how the UI needed to guide users through complex decisions. Mapping these flows created a
+        shared
+        understanding across design, product, and engineering.</p>
+      <h4>Turning Flows into Wireframes</h4>
+      <p>With the flows clarified, I translated them into wireframes and prototypes for the most important screens.
+        These
+        prototypes weren’t just static mockups. They were clickable journeys that let us test the logic and
+        interactions early,
+        reducing the risk of rework later in development.</p>
+      <h4>Testing and Iteration</h4>
+      <p>Because the user base was highly specialised, we worked with a small but expert group of internal users. I
+        conducted
+        short interviews, collected feedback from our internal chat channels, and observed how they navigated the
+        prototypes.
+      </p>
+      <p>I pushed for feedback during sprint reviews, ensuring that design work was visible and testable at each
+        iteration.
+        This kept stakeholders engaged, gave developers early visibility into upcoming UI patterns, and helped us
+        validate
+        design decisions before they became expensive to change.Many of the stakeholders were accustomed to more
+        traditional, waterfall-style delivery, where design and
+        development
+        happened in silos. By integrating lightweight testing and iteration into the sprint cadence, I helped them
+        experience
+        the benefits of incremental improvements and reduced friction when handing off to engineering.</p>
+      <h4>Bridging Design and Development</h4>
+      <p>Throughout the process, I partnered closely with backend engineers to ensure the UI aligned with system logic.
+        For
+        example, some edge cases in operational flows required creative solutions that balanced technical constraints
+        with user
+        clarity.</p>
+      <p>
+        The design philosophy emphasised modularity, reusability, and scalability. Components and patterns were built to
+        support company-wide adoption, laying the foundation for a unified design system before a formal design team was
+        in place.
+      </p>
+    </section>
+    <section id="core-workflows">
+      <h2>Designing Core Workflows</h2>
+      <p>When I turned to the core operational pages, my goal was to design interfaces that could support a wide range
+        of user workflows while staying consistent across the platform.
+        Each service (Sources, Contributions, Destinations, Delivery, and Stream Profiles) shared a common set of
+        actions:
+      <ul>
+        <li>Creating a record through structured forms.</li>
+        <li>Reviewing a summary of entered data prior to submission.</li>
+        <li>Accessing detailed pages to view or edit existing records.</li>
+        <li>Navigating contribution lists to track and manage multiple entries.</li>
+      </ul>
+      By standardising these patterns across modules, users didn’t need to relearn interactions as they moved between
+      services. This consistency reduced cognitive load, supported efficiency for expert users, and made the system
+      easier to scale as new features were added.</p>
+    </section>
+    <section id="impact">
+      <h2>Impact</h2>
+      <p>
+        The redesign significantly improved usability and efficiency for setting up streams and managing deliveries,
+        reducing
+        the time and cognitive load for expert users. New users experienced faster onboarding, while consistent patterns
+        and
+        modular workflows laid a strong foundation that the formal design team later scaled across the platform.
+        Raising accessibility
+        and usability standards improved inclusivity and minimised errors, and iterative collaboration
+        with
+        stakeholders became part of the sprint rhythm, helping the team embrace more modern, user-centered practices. On
+        the
+        technical side, the work contributed to a reusable React component library that is now being adopted across
+        multiple
+        products, enabling a more unified design system across the organization. Overall, the platform became more
+        reliable,
+        scalable, and user-friendly, setting the stage for future growth.
+      </p>
+
+      <h3>Tools Used</h3>
+      <!-- ADD ICONS - TODO -->
+      <p>Figma, React, Storybook, Jira, Confluence</p>
+
+      <!-- <div class="poster-card">
+        <div>
+          <img src="assets/img/cloud/poster.png" alt="Cloud Media Platform Poster" />
+        </div>
+        <p class="image-caption">Research and design summary poster showcasing workflows, UI components, and system
+          impact.</p>
+      </div> -->
+    </section>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Karolina Lencina.</p>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
