@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-emoji {
+            position: fixed;
+            font-size: 3rem;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border: 5px dashed #ff1493;
+            position: relative;
+            animation: bounce 3s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff1493;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: wobble 2s ease-in-out infinite;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #764ba2;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: bold;
+        }
+
+        /* Security Question Styles */
+        .security-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+        }
+
+        .submit-button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #ff1493;
+            font-weight: bold;
+            font-size: 0.95rem;
+            display: none;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Gift Reveal Styles */
+        .gift-section {
+            display: none;
+        }
+
+        .scratch-card-container {
+            margin: 40px 0;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .code-display {
+            font-size: 3.5rem;
+            font-weight: bold;
+            letter-spacing: 12px;
+            color: #fff;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+
+        .scratch-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.6);
+            user-select: none;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .scratch-text {
+            pointer-events: none;
+        }
+
+        .instructions {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            animation: confettiFall 3s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .hidden-text {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .fully-revealed {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .fully-revealed .scratch-layer {
+            display: none;
+        }
+
+        .copy-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+            display: none;
+        }
+
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .copy-button:active {
+            transform: translateY(0);
+        }
+
+        .copy-feedback {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #4facfe;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .copy-feedback.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating emojis -->
+    <div class="floating-emoji" style="left: 5%; top: 10%; animation-delay: 0s;">🎂</div>
+    <div class="floating-emoji" style="right: 5%; top: 20%; animation-delay: 1s;">🎉</div>
+    <div class="floating-emoji" style="left: 10%; bottom: 15%; animation-delay: 2s;">🎈</div>
+    <div class="floating-emoji" style="right: 10%; bottom: 10%; animation-delay: 1.5s;">🎁</div>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday bby! 🎉</h1>
+        <p class="subtitle">Here's a mini gift from ur wifi ✨</p>
+
+        <!-- Security Question Section -->
+        <div class="security-section" id="securitySection">
+            <p class="question-text">But first... can you answer this question? 😏</p>
+            <p class="question-text" style="font-size: 1rem; font-weight: normal;">What's the weirdest place we had sex at/in?</p>
+            <div class="input-group">
+                <input type="text" id="answerInput" placeholder="Your answer here..." autocomplete="off">
+                <button class="submit-button" id="submitBtn">Check ✨</button>
+            </div>
+            <div class="error-message" id="errorMessage">Hmm, that's not right... try again! 😜</div>
+        </div>
+
+        <!-- Gift Reveal Section -->
+        <div class="gift-section" id="giftSection">
+            <div class="scratch-card-container">
+                <div class="code-display" id="codeDisplay">
+                    <span class="hidden-text" id="hiddenCode">LOADING...</span>
+                </div>
+                <div class="scratch-layer" id="scratchLayer">
+                    <span class="scratch-text">✨ Scratch to reveal ✨</span>
+                </div>
+            </div>
+
+            <p class="instructions">Click and drag to reveal your code!</p>
+
+            <button class="copy-button" id="copyBtn">📋 Copy Code</button>
+            <div class="copy-feedback" id="copyFeedback">Copied to clipboard! 🎉</div>
+        </div>
+    </div>
+
+    <script>
+        // Load activation code from config.js
+        let ACTIVATION_CODE = null;
+
+        // Try to load from config
+        const script = document.createElement('script');
+        script.src = './config.js';
+        script.onload = () => {
+            // config.js should set window.ACTIVATION_CODE
+            if (window.ACTIVATION_CODE) {
+                ACTIVATION_CODE = window.ACTIVATION_CODE;
+            } else {
+                ACTIVATION_CODE = "CODE_NOT_SET";
+            }
+        };
+        script.onerror = () => {
+            ACTIVATION_CODE = "CONFIG_NOT_FOUND";
+        };
+        document.head.appendChild(script);
+
+        // Security Question Logic
+        const answerInput = document.getElementById('answerInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        const securitySection = document.getElementById('securitySection');
+        const giftSection = document.getElementById('giftSection');
+
+        const CORRECT_ANSWER = "train";
+
+        function checkAnswer() {
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            
+            if (userAnswer.includes(CORRECT_ANSWER)) {
+                errorMessage.classList.remove('show');
+                securitySection.style.display = 'none';
+                giftSection.style.display = 'block';
+                
+                // Initialize the reveal after a short delay
+                setTimeout(() => {
+                    initializeReveal();
+                }, 100);
+            } else {
+                errorMessage.classList.add('show');
+                answerInput.value = '';
+                answerInput.focus();
+            }
+        }
+
+        submitBtn.addEventListener('click', checkAnswer);
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        // Gift Reveal Logic
+        const scratchLayer = document.getElementById('scratchLayer');
+        const hiddenCode = document.getElementById('hiddenCode');
+        const codeDisplay = document.getElementById('codeDisplay');
+        const copyBtn = document.getElementById('copyBtn');
+        const copyFeedback = document.getElementById('copyFeedback');
+
+        let isDrawing = false;
+        let revealedPercentage = 0;
+
+        function initializeReveal() {
+            hiddenCode.textContent = ACTIVATION_CODE || "CODE_NOT_SET";
+            revealedPercentage = 0;
+            isDrawing = false;
+
+            scratchLayer.addEventListener('mousedown', () => {
+                isDrawing = true;
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDrawing = false;
+            });
+
+            scratchLayer.addEventListener('mousemove', (e) => {
+                if (!isDrawing) return;
+
+                const rect = scratchLayer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                revealArea(x, y);
+            });
+
+            // Touch events for mobile
+            scratchLayer.addEventListener('touchstart', () => {
+                isDrawing = true;
+            });
+
+            document.addEventListener('touchend', () => {
+                isDrawing = false;
+            });
+
+            scratchLayer.addEventListener('touchmove', (e) => {
+                if (!isDrawing) return;
+
+                const touch = e.touches[0];
+                const rect = scratchLayer.getBoundingClientRect();
+                const x = touch.clientX - rect.left;
+                const y = touch.clientY - rect.top;
+
+                revealArea(x, y);
+            });
+        }
+
+        function revealArea(x, y) {
+            revealedPercentage += 2;
+
+            scratchLayer.style.opacity = Math.max(0, 1 - (revealedPercentage / 100));
+            hiddenCode.style.opacity = Math.min(1, revealedPercentage / 50);
+
+            if (revealedPercentage >= 100) {
+                fullyRevealed();
+            }
+        }
+
+        function fullyRevealed() {
+            scratchLayer.style.pointerEvents = 'none';
+            scratchLayer.style.opacity = '0';
+            hiddenCode.style.opacity = '1';
+            codeDisplay.classList.add('fully-revealed');
+            copyBtn.style.display = 'block';
+
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const confettiPieces = ['🎉', '🎁', '🎈', '✨', '💝', '🎂', '🎊'];
+            for (let i = 0; i < 15; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.textContent = confettiPieces[Math.floor(Math.random() * confettiPieces.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-50px';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3500);
+            }
+        }
+
+        // Copy to clipboard functionality
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(ACTIVATION_CODE).then(() => {
+                copyFeedback.classList.add('show');
+                setTimeout(() => {
+                    copyFeedback.classList.remove('show');
+                }, 2000);
+            });
+        });
+
+        // Focus on input on load
+        window.addEventListener('load', () => {
+            answerInput.focus();
+        });
+    </script>
+</body>
+</html>
