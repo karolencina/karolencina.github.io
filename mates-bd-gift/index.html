@@ -185,27 +185,21 @@
             font-family: 'Courier New', monospace;
         }
 
-        .scratch-layer {
+        .hidden-text {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #scratchCanvas {
+            border-radius: 20px;
+            cursor: crosshair;
+            display: block;
+            margin: 0 auto;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
-            border-radius: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: rgba(0, 0, 0, 0.6);
-            user-select: none;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .scratch-text {
-            pointer-events: none;
         }
 
         .instructions {
@@ -237,20 +231,6 @@
                 transform: translateY(100vh) rotate(720deg);
                 opacity: 0;
             }
-        }
-
-        .hidden-text {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .fully-revealed {
-            background: transparent !important;
-            box-shadow: none !important;
-        }
-
-        .fully-revealed .scratch-layer {
-            display: none;
         }
 
         .copy-button {
@@ -334,9 +314,7 @@
             <div class="scratch-card-container">
                 <div class="code-display" id="codeDisplay">
                     <span class="hidden-text" id="hiddenCode">LOADING...</span>
-                </div>
-                <div class="scratch-layer" id="scratchLayer">
-                    <span class="scratch-text">✨ Scratch to reveal ✨</span>
+                    <canvas id="scratchCanvas"></canvas>
                 </div>
             </div>
 
@@ -398,78 +376,118 @@
             }
         });
 
-        // Gift Reveal Logic
-        const scratchLayer = document.getElementById('scratchLayer');
+        // Canvas Scratch Card Logic
+        const canvas = document.getElementById('scratchCanvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
         const hiddenCode = document.getElementById('hiddenCode');
         const codeDisplay = document.getElementById('codeDisplay');
         const copyBtn = document.getElementById('copyBtn');
         const copyFeedback = document.getElementById('copyFeedback');
 
         let isDrawing = false;
-        let revealedPercentage = 0;
 
         function initializeReveal() {
             hiddenCode.textContent = ACTIVATION_CODE || "NO CODE PROVIDED";
-            revealedPercentage = 0;
-            isDrawing = false;
 
-            scratchLayer.addEventListener('mousedown', () => {
-                isDrawing = true;
-            });
+            // Set canvas dimensions
+            const rect = codeDisplay.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            
+            ctx.scale(dpr, dpr);
 
-            document.addEventListener('mouseup', () => {
-                isDrawing = false;
-            });
+            // Draw the scratch layer (golden gradient)
+            const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+            gradient.addColorStop(0, '#FFD700');
+            gradient.addColorStop(0.5, '#FFA500');
+            gradient.addColorStop(1, '#FFD700');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, rect.width, rect.height);
+            
+            // Add texture
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, rect.width, rect.height);
 
-            scratchLayer.addEventListener('mousemove', (e) => {
-                if (!isDrawing) return;
+            // Add text
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+            ctx.font = `bold 1.2rem Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('✨ Scratch to reveal ✨', rect.width / 2, rect.height / 2);
 
-                const rect = scratchLayer.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+            // Mouse events
+            canvas.addEventListener('mousedown', startScratching);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('mouseup', stopScratching);
+            canvas.addEventListener('mouseout', stopScratching);
 
-                revealArea(x, y);
-            });
-
-            // Touch events for mobile
-            scratchLayer.addEventListener('touchstart', () => {
-                isDrawing = true;
-            });
-
-            document.addEventListener('touchend', () => {
-                isDrawing = false;
-            });
-
-            scratchLayer.addEventListener('touchmove', (e) => {
-                if (!isDrawing) return;
-
-                const touch = e.touches[0];
-                const rect = scratchLayer.getBoundingClientRect();
-                const x = touch.clientX - rect.left;
-                const y = touch.clientY - rect.top;
-
-                revealArea(x, y);
-            });
+            // Touch events
+            canvas.addEventListener('touchstart', startScratching);
+            canvas.addEventListener('touchmove', scratch);
+            canvas.addEventListener('touchend', stopScratching);
         }
 
-        function revealArea(x, y) {
-            revealedPercentage += 2;
+        function startScratching(e) {
+            isDrawing = true;
+        }
 
-            scratchLayer.style.opacity = Math.max(0, 1 - (revealedPercentage / 100));
-            hiddenCode.style.opacity = Math.min(1, revealedPercentage / 50);
+        function stopScratching() {
+            isDrawing = false;
+        }
 
-            if (revealedPercentage >= 100) {
+        function scratch(e) {
+            if (!isDrawing) return;
+
+            e.preventDefault();
+
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            let x, y;
+            if (e.touches) {
+                x = (e.touches[0].clientX - rect.left) * scaleX;
+                y = (e.touches[0].clientY - rect.top) * scaleY;
+            } else {
+                x = (e.clientX - rect.left) * scaleX;
+                y = (e.clientY - rect.top) * scaleY;
+            }
+
+            // Erase with circular brush
+            const brushRadius = 40;
+            ctx.clearRect(x - brushRadius, y - brushRadius, brushRadius * 2, brushRadius * 2);
+
+            // Check if enough is revealed
+            checkRevealed();
+        }
+
+        function checkRevealed() {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            let transparentPixels = 0;
+
+            for (let i = 3; i < data.length; i += 4) {
+                if (data[i] < 128) {
+                    transparentPixels++;
+                }
+            }
+
+            const revealPercentage = (transparentPixels / (data.length / 4)) * 100;
+
+            if (revealPercentage > 50) {
                 fullyRevealed();
             }
         }
 
         function fullyRevealed() {
-            scratchLayer.style.pointerEvents = 'none';
-            scratchLayer.style.opacity = '0';
+            canvas.style.display = 'none';
             hiddenCode.style.opacity = '1';
-            codeDisplay.classList.add('fully-revealed');
             copyBtn.style.display = 'block';
-
             createConfetti();
         }
 
