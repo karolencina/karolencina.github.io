@@ -183,23 +183,29 @@
             position: relative;
             overflow: hidden;
             font-family: 'Courier New', monospace;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hidden-text {
             opacity: 0;
             transition: opacity 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         #scratchCanvas {
             border-radius: 20px;
             cursor: crosshair;
             display: block;
-            margin: 0 auto;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 10;
         }
 
         .instructions {
@@ -385,6 +391,7 @@
         const copyFeedback = document.getElementById('copyFeedback');
 
         let isDrawing = false;
+        const brushRadius = 25; // Medium size
 
         function initializeReveal() {
             hiddenCode.textContent = ACTIVATION_CODE || "NO CODE PROVIDED";
@@ -409,8 +416,8 @@
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, rect.width, rect.height);
             
-            // Add texture
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            // Add subtle texture
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
             ctx.fillRect(0, 0, rect.width, rect.height);
 
             // Add text
@@ -434,6 +441,21 @@
 
         function startScratching(e) {
             isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            let x, y;
+            if (e.touches) {
+                x = (e.touches[0].clientX - rect.left) * scaleX;
+                y = (e.touches[0].clientY - rect.top) * scaleY;
+            } else {
+                x = (e.clientX - rect.left) * scaleX;
+                y = (e.clientY - rect.top) * scaleY;
+            }
+
+            // Start scratching immediately on touch/click
+            eraseBrush(x, y);
         }
 
         function stopScratching() {
@@ -458,9 +480,16 @@
                 y = (e.clientY - rect.top) * scaleY;
             }
 
-            // Erase with circular brush
-            const brushRadius = 40;
-            ctx.clearRect(x - brushRadius, y - brushRadius, brushRadius * 2, brushRadius * 2);
+            eraseBrush(x, y);
+        }
+
+        function eraseBrush(x, y) {
+            // Use destination-out to erase (reveal what's behind)
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
+            ctx.arc(x, y, brushRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
 
             // Check if enough is revealed
             checkRevealed();
@@ -479,12 +508,13 @@
 
             const revealPercentage = (transparentPixels / (data.length / 4)) * 100;
 
-            if (revealPercentage > 50) {
+            if (revealPercentage > 80) {
                 fullyRevealed();
             }
         }
 
         function fullyRevealed() {
+            canvas.style.pointerEvents = 'none';
             canvas.style.display = 'none';
             hiddenCode.style.opacity = '1';
             copyBtn.style.display = 'block';
