@@ -289,6 +289,20 @@
         .copy-feedback.show {
             opacity: 1;
         }
+
+        .error-warning {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            padding: 15px;
+            background: #ffe0e0;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .error-warning.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -301,6 +315,8 @@
     <div class="container">
         <h1>🎉 Happy Birthday bby! 🎉</h1>
         <p class="subtitle">Here's a mini gift from ur wifi ✨</p>
+
+        <div class="error-warning" id="errorWarning"></div>
 
         <!-- Security Question Section -->
         <div class="security-section" id="securitySection">
@@ -332,33 +348,29 @@
     </div>
 
     <script>
-        // Load activation code from config.js
-        let ACTIVATION_CODE = null;
+        // Get activation code from URL parameter
+        function getCodeFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('code');
+        }
 
-        // Try to load from config
-        const script = document.createElement('script');
-        script.src = './config.js';
-        script.onload = () => {
-            // config.js should set window.ACTIVATION_CODE
-            if (window.ACTIVATION_CODE) {
-                ACTIVATION_CODE = window.ACTIVATION_CODE;
-            } else {
-                ACTIVATION_CODE = "CODE_NOT_SET";
-            }
-        };
-        script.onerror = () => {
-            ACTIVATION_CODE = "CONFIG_NOT_FOUND";
-        };
-        document.head.appendChild(script);
+        let ACTIVATION_CODE = getCodeFromUrl();
 
         // Security Question Logic
         const answerInput = document.getElementById('answerInput');
         const submitBtn = document.getElementById('submitBtn');
         const errorMessage = document.getElementById('errorMessage');
+        const errorWarning = document.getElementById('errorWarning');
         const securitySection = document.getElementById('securitySection');
         const giftSection = document.getElementById('giftSection');
 
         const CORRECT_ANSWER = "train";
+
+        // Check if code is provided
+        if (!ACTIVATION_CODE) {
+            errorWarning.textContent = '⚠️ No activation code provided! Make sure the URL includes ?code=YOUR_CODE';
+            errorWarning.classList.add('show');
+        }
 
         function checkAnswer() {
             const userAnswer = answerInput.value.trim().toLowerCase();
@@ -397,7 +409,7 @@
         let revealedPercentage = 0;
 
         function initializeReveal() {
-            hiddenCode.textContent = ACTIVATION_CODE || "CODE_NOT_SET";
+            hiddenCode.textContent = ACTIVATION_CODE || "NO CODE PROVIDED";
             revealedPercentage = 0;
             isDrawing = false;
 
